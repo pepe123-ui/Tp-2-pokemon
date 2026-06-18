@@ -1,0 +1,308 @@
+[
+  {
+    "id": 1,
+    "nombre": "Bulbasaur",
+    "tipo": "Planta",
+    "PC": 45
+  },
+  {
+    "id": 2,
+    "nombre": "Ivysaur",
+    "tipo": "Planta",
+    "PC": 83
+  },
+  {
+    "id": 3,
+    "nombre": "Venusaur",
+    "tipo": "Planta",
+    "PC": 128
+  },
+  {
+    "id": 4,
+    "nombre": "Charmander",
+    "tipo": "Fuego",
+    "PC": 43
+  },
+  {
+    "id": 5,
+    "nombre": "Charmeleon",
+    "tipo": "Fuego",
+    "PC": 79
+  },
+  {
+    "id": 6,
+    "nombre": "Charizard",
+    "tipo": "Fuego",
+    "PC": 122
+  },
+  {
+    "id": 7,
+    "nombre": "Squirtle",
+    "tipo": "Agua",
+    "PC": 42
+  },
+  {
+    "id": 8,
+    "nombre": "Wartortle",
+    "tipo": "Agua",
+    "PC": 79
+  },
+  {
+    "id": 9,
+    "nombre": "Blastoise",
+    "tipo": "Agua",
+    "PC": 122
+  },
+  {
+    "id": 10,
+    "nombre": "Caterpie",
+    "tipo": "Bicho",
+    "PC": 15
+  },
+  {
+    "id": 11,
+    "nombre": "Metapod",
+    "tipo": "Bicho",
+    "PC": 37
+  },
+  {
+    "id": 12,
+    "nombre": "Butterfree",
+    "tipo": "Bicho",
+    "PC": 76
+  },
+  {
+    "id": 13,
+    "nombre": "Weedle",
+    "tipo": "Bicho",
+    "PC": 15
+  },
+  {
+    "id": 14,
+    "nombre": "Kakuna",
+    "tipo": "Bicho",
+    "PC": 36
+  },
+  {
+    "id": 15,
+    "nombre": "Beedrill",
+    "tipo": "Bicho",
+    "PC": 81
+  },
+  {
+    "id": 16,
+    "nombre": "Pidgey",
+    "tipo": "Normal",
+    "PC": 40
+  },
+  {
+    "id": 17,
+    "nombre": "Pidgeotto",
+    "tipo": "Normal",
+    "PC": 76
+  },
+  {
+    "id": 18,
+    "nombre": "Pidgeot",
+    "tipo": "Normal",
+    "PC": 120
+  },
+  {
+    "id": 19,
+    "nombre": "Rattata",
+    "tipo": "Normal",
+    "PC": 39
+  },
+  {
+    "id": 20,
+    "nombre": "Raticate",
+    "tipo": "Normal",
+    "PC": 88
+  },
+  {
+    "id": 21,
+    "nombre": "Spearow",
+    "tipo": "Normal",
+    "PC": 47
+  },
+  {
+    "id": 22,
+    "nombre": "Fearow",
+    "tipo": "Normal",
+    "PC": 93
+  },
+  {
+    "id": 23,
+    "nombre": "Ekans",
+    "tipo": "Veneno",
+    "PC": 40
+  },
+  {
+    "id": 24,
+    "nombre": "Arbok",
+    "tipo": "Veneno",
+    "PC": 92
+  },
+  {
+    "id": 25,
+    "nombre": "Pikachu",
+    "tipo": "Eléctrico",
+    "PC": 43
+  },
+  {
+    "id": 26,
+    "nombre": "Raichu",
+    "tipo": "Eléctrico",
+    "PC": 99
+  },
+  {
+    "id": 27,
+    "nombre": "Sandshrew",
+    "tipo": "Tierra",
+    "PC": 42
+  },
+  {
+    "id": 28,
+    "nombre": "Sandslash",
+    "tipo": "Tierra",
+    "PC": 94
+  },
+  {
+    "id": 29,
+    "nombre": "Nidoran♀",
+    "tipo": "Veneno",
+    "PC": 43
+  },
+  {
+    "id": 30,
+    "nombre": "Nidorina",
+    "tipo": "Veneno",
+    "PC": 77
+  },
+  {
+    "id": 31,
+    "nombre": "Nidoqueen",
+    "tipo": "Veneno",
+    "PC": 115
+  },
+  {
+    "id": 32,
+    "nombre": "Nidoran♂",
+    "tipo": "Veneno",
+    "PC": 43
+  },
+  {
+    "id": 33,
+    "nombre": "Nidorino",
+    "tipo": "Veneno",
+    "PC": 77
+  },
+  {
+    "id": 34,
+    "nombre": "Nidoking",
+    "tipo": "Veneno",
+    "PC": 117
+  },
+  {
+    "id": 35,
+    "nombre": "Clefairy",
+    "tipo": "Hada",
+    "PC": 38
+  },
+  {
+    "id": 36,
+    "nombre": "Clefable",
+    "tipo": "Hada",
+    "PC": 100
+  },
+  {
+    "id": 37,
+    "nombre": "Vulpix",
+    "tipo": "Fuego",
+    "PC": 42
+  },
+  {
+    "id": 38,
+    "nombre": "Ninetales",
+    "tipo": "Fuego",
+    "PC": 108
+  },
+  {
+    "id": 39,
+    "nombre": "Jigglypuff",
+    "tipo": "Normal",
+    "PC": 34
+  },
+  {
+    "id": 40,
+    "nombre": "Wigglytuff",
+    "tipo": "Normal",
+    "PC": 94
+  },
+  {
+    "id": 41,
+    "nombre": "Zubat",
+    "tipo": "Veneno",
+    "PC": 33
+  },
+  {
+    "id": 42,
+    "nombre": "Golbat",
+    "tipo": "Veneno",
+    "PC": 94
+  },
+  {
+    "id": 43,
+    "nombre": "Oddish",
+    "tipo": "Planta",
+    "PC": 43
+  },
+  {
+    "id": 44,
+    "nombre": "Gloom",
+    "tipo": "Planta",
+    "PC": 84
+  },
+  {
+    "id": 45,
+    "nombre": "Vileplume",
+    "tipo": "Planta",
+    "PC": 118
+  },
+  {
+    "id": 46,
+    "nombre": "Paras",
+    "tipo": "Bicho",
+    "PC": 40
+  },
+  {
+    "id": 47,
+    "nombre": "Parasect",
+    "tipo": "Bicho",
+    "PC": 98
+  },
+  {
+    "id": 48,
+    "nombre": "Venonat",
+    "tipo": "Bicho",
+    "PC": 41
+  },
+  {
+    "id": 49,
+    "nombre": "Venomoth",
+    "tipo": "Bicho",
+    "PC": 101
+  },
+  {
+    "id": 50,
+    "nombre": "Diglett",
+    "tipo": "Tierra",
+    "PC": 35
+  },
+  {
+    "id": 51,
+    "nombre": "Dugtrio",
+    "tipo": "Tierra",
+    "PC": 102
+  }
+]
