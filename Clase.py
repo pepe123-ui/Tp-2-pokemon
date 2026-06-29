@@ -1,10 +1,9 @@
-import json
-
-class pokemon():
-    def __init__(self, id, nombre, tipo, PC):
+class Pokemon:
+    def __init__(self, id, nombre, tipo, poder_combate):
         self.id = id
         self.nombre = nombre
         self.tipo = tipo
-        self.PC = PC
+        self.poder_combate = poder_combate
+
     def __str__(self):
-        pass
+        return f"#{self.id} {self.nombre} ({self.tipo}) - PC: {self.poder_combate}"
