@@ -39,13 +39,19 @@ def submenu_ordenar_pc(entrenador):
     elif op == "3":
         entrenador.ordenar_pc_por_poder()
         entrenador.pc.mostrar()
-    elif op != "0":
+    elif op == "0":
+        print("Volviendo al menú principal...")
+    else:
         print("Opción inválida.")
+
+
+def pausa():
+    input("\nPresioná Enter para volver al menú principal...")
 
 
 def main():
     print("Bienvenido a Pokémon Huergo")
-    nombre = input("Nombre del entrenador: ").strip() or "Ash"
+    nombre = input("Nombre del entrenador: ").strip()
 
     try:
         pokedex = pokedex_nacional()
@@ -69,44 +75,54 @@ def main():
                 break
             elif opcion == "1":
                 pokedex.mostrar()
-                consulta = input("\n¿Consultar por id? (s/n): ").strip().lower()
+                consulta = input("\n¿Consultar Pokémon? (s/n): ").strip().lower()
                 if consulta == "s":
-                    id_str = input("Id a consultar: ").strip()
-                    entrenador.consultar_pokedex(int(id_str))
+                    dato = input("Id o nombre a consultar: ").strip()
+                    entrenador.consultar_pokedex(dato)
             elif opcion == "2":
                 entrenador.mostrar_equipo()
+                pausa()
             elif opcion == "3":
                 entrenador.pc.mostrar()
+                pausa()
             elif opcion == "4":
                 medallas.mostrar()
+                pausa()
             elif opcion == "5":
-                id_str = input("Id del Pokémon a capturar: ").strip()
-                poke = pokedex.buscar(int(id_str))
-                if poke:
-                    entrenador.capturar(poke)
-                else:
-                    print("Id no encontrado en la Pokédex.")
+                poke = entrenador.encontrar_pokemon_salvaje()
+                entrenador.intentar_capturar(poke)
+                pausa()
             elif opcion == "6":
                 submenu_ordenar_pc(entrenador)
             elif opcion == "7":
                 nom = input("Nombre del Pokémon: ").strip()
                 entrenador.buscar_en_equipo(nom)
+                pausa()
             elif opcion == "8":
                 entrenador.sanar_equipo()
+                pausa()
             elif opcion == "9":
                 entrenador.pc.mostrar()
                 idx = int(input("Número en la PC a transferir: "))
                 entrenador.transferir_a_oak(idx)
+                pausa()
             elif opcion == "10":
                 entrenador.deshacer_transferencia()
+                pausa()
             elif opcion == "11":
                 print("\nGimnasios disponibles:")
                 for i, g in enumerate(GIMNASIOS, 1):
                     print(f"  {i}. {g['ciudad']} - {g['lider']}")
                 num = int(input("Elegí un gimnasio (1-8): "))
-                entrenador.desafiar_gimnasio(num)
+                if 1 <= num <= len(GIMNASIOS):
+                    gimnasio = GIMNASIOS[num - 1]
+                    entrenador.desafiar_gimnasio(gimnasio["medalla"])
+                else:
+                    print("Gimnasio inválido.")
+                pausa()
             else:
                 print("Opción inválida.")
+                pausa()
         except ValueError:
             print("Entrada inválida. Usá números donde corresponda.")
         except Exception as e:

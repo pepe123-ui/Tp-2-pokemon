@@ -40,6 +40,25 @@ class Entrenador:
             self.pc.agregar(pokemon)
             print(f"Equipo lleno. {pokemon.nombre} fue enviado a la PC.")
 
+    def encontrar_pokemon_salvaje(self):
+        return self.pokedex.obtener_aleatorio()
+
+    def intentar_capturar(self, pokemon, prob_captura=0.6):
+        if pokemon is None:
+            print("No hay Pokémon disponibles en la Pokédex.")
+            return
+        print(f"\n¡Un {pokemon.nombre} salvaje apareció!")
+        opcion = input("¿Querés intentar capturarlo? (s/n): ").strip().lower()
+        if opcion not in {"s", "si"}:
+            print(f"Decidiste dejar escapar a {pokemon.nombre}.")
+            return
+        print("Lanzás una Pokéball...")
+        if random.random() < prob_captura:
+            print(f"¡Genial! {pokemon.nombre} fue capturado.")
+            self.capturar(pokemon)
+        else:
+            print(f"¡Oh no! {pokemon.nombre} no se dejó capturar.")
+
     def mostrar_equipo(self):
         print(f"\n--- Equipo de {self.nombre} ({len(self.equipo)}/{self.MAX_EQUIPO}) ---")
         if not self.equipo:
@@ -77,18 +96,17 @@ class Entrenador:
         self.pc.agregar(poke)
         print(f"{poke.nombre} regresó a la PC.")
 
-    def desafiar_gimnasio(self, numero):
-        if numero < 1 or numero > len(GIMNASIOS):
-            print("Gimnasio inválido.")
+    def desafiar_gimnasio(self, medalla):
+        if self.medallas.buscar(medalla):
+            print("Ya has ganado esta medalla. No puedes desafiarlo de nuevo.")
             return
-        gym = GIMNASIOS[numero - 1]
-        print(f"\nDesafiando a {gym['lider']} de {gym['ciudad']}...")
+        print(f"Desafíando a {medalla}...")
         if random.choice([True, False]):
-            print("¡Ganaste la batalla!")
-            self.medallas.agregar(gym["medalla"])
+            print("¡Ganaste la batalla!")   
+            self.medallas.agregar(medalla)
+            print(f"Has ganado la medalla {medalla}.")
         else:
             print("Perdiste la batalla. Entrená un poco más.")
-
     def ordenar_pc_por_nombre(self):
         lista = bubble_sort_nombre(self.pc.a_lista())
         self.pc.reconstruir(lista)
@@ -111,10 +129,24 @@ class Entrenador:
         else:
             print(f'"{nombre}" no está en el equipo.')
 
-    def consultar_pokedex(self, id_buscado):
-        pos = busqueda_binaria(self._ids_ordenados, id_buscado)
-        if pos == -1:
-            print(f"El id {id_buscado} no está registrado en la Pokédex.")
-            return
-        poke = self.pokedex.buscar(id_buscado)
+    def consultar_pokedex(self, busqueda):
+        busqueda = busqueda.strip()
+        if busqueda.isdigit():
+            id_buscado = int(busqueda)
+            pos = busqueda_binaria(self._ids_ordenados, id_buscado)
+            if pos == -1:
+                print(f"El id {id_buscado} no está registrado en la Pokédex.")
+                return
+            poke = self.pokedex.buscar(id_buscado)
+        else:
+            poke = self.pokedex.buscar_por_nombre(busqueda)
+            if poke is None:
+                print(f'"{busqueda}" no está registrado en la Pokédex.')
+                return
         print(f"Encontrado: {poke}")
+
+    def obtener_pokemon(self, busqueda):
+        busqueda = busqueda.strip()
+        if busqueda.isdigit():
+            return self.pokedex.buscar(int(busqueda))
+        return self.pokedex.buscar_por_nombre(busqueda)
