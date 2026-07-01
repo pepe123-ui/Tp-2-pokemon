@@ -1,3 +1,6 @@
+import json
+
+
 class HashSet:
     def __init__(self, tamaño=10):
         self.tamaño = tamaño
@@ -26,3 +29,13 @@ class HashSet:
         print("\nHASH SET:")
         for i in range(self.tamaño):
             print(f"Bucket {i}: {self.buckets[i]}")
+
+def medallas_iniciales():
+    medallas=HashSet()
+    with open('Medallas.json', 'r') as archivo:
+        medallas_data = json.load(archivo)
+    for medalla in medallas_data:
+        medallas.agregar(medalla['id'])
+        if  medalla['id'] in medallas:
+            print(f"Medalla con ID {medalla['id']} ya fue conseguida.")
+    return medallas

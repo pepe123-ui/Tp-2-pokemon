@@ -1,7 +1,7 @@
 import json
 
-from hash_map import cargar_pokedex
-from hash_set import cargar_medallas_iniciales
+from hash_map import pokedex_nacional
+from hash_set import medallas_iniciales
 from entrenador import Entrenador, GIMNASIOS
 
 
@@ -48,8 +48,8 @@ def main():
     nombre = input("Nombre del entrenador: ").strip() or "Ash"
 
     try:
-        pokedex = cargar_pokedex()
-        medallas = cargar_medallas_iniciales(cantidad=2)
+        pokedex = pokedex_nacional()
+        medallas = medallas_iniciales()
     except FileNotFoundError as e:
         print(f"Error: no se encontró {e.filename}")
         return
